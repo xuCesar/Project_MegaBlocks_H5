@@ -1,0 +1,65 @@
+
+
+$smallFont:0.2rem;
+$baseFont:0.3rem;
+$mediumFont:0.5rem;
+$bigFont:0.8rem;
+
+.section1{
+	.page1{
+		margin: 3.4rem 0 1rem 0;
+	}
+	p{
+		font-size: 0.3rem;
+		text-align: center;
+		color:#fff;
+		line-height: 200%;
+	}
+}
+
+.section2{
+	text-align: center;
+	
+	.slide{
+		h3{
+			font-size: $baseFont;
+			padding: 0 0.4rem;
+			margin: 3rem 0 1rem 0;
+		}
+		li{
+			width: 5.6rem;
+			height: 30px;
+			line-height: 30px;
+			background-color: rgba(255,255,255,0.4);
+			margin: 0 0 20px 0.4rem;
+			font-size: $smallFont;
+			border-radius: 20px;
+			border: 2px solid rgba(102,223,255,1);
+			position: relative;
+			p{
+				text-indent: 0.6rem;
+			}
+			span{
+				position: absolute;
+				display: inline-block;
+				left: -2px;
+				top: -2px;
+				width: 0.6rem;
+				height: 0.6rem;
+				border-radius: 50%;
+				border: 2px solid rgba(102,223,255,1);
+			}
+
+		}
+	}
+
+	.slide1{
+		p{
+			font-size: $baseFont;
+		}
+	}
+
+	.slide2{
+		font-size: $baseFont;
+	}
+}
