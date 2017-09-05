@@ -1,6 +1,7 @@
 $(function(){
 
     var main = new function(){
+
         // 横屏监测 DeviceOrientation 
         this.isSupportOrientation = (typeof window.orientation == "number" && typeof window.onorientationchange == "object");
         this.answer = [];
@@ -56,7 +57,6 @@ $(function(){
             controlArrows: false,
             loopHorizontal: false,
             afterLoad: function (anchorLink, index) {
-                console.log(anchorLink,index)
                 if (index == 2) {
                     $.fn.fullpage.setAllowScrolling(false, 'up');
                     $.fn.fullpage.setAllowScrolling(false, 'down');
@@ -67,8 +67,24 @@ $(function(){
     main.initPage()
 
     main.pick = function(){
-        $('.slide li').on('click',function(){
-            console.log($(this).data('res'))
+        var _this = this;
+
+        $('.slide ul').on('click',function(e){
+
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+            var index = $(this).data('id');
+
+            if (target.nodeName.toLowerCase() == 'p') {
+
+                var res = $(target).data('res');
+                _this.answer[index-1] = res;
+                console.log(_this.answer)
+            }
+
+            if (_this.answer.length == 5) {
+                $('.submit').fadeIn()
+            }
 
         })
     }
@@ -79,7 +95,7 @@ $(function(){
     }
 	
 
-	$('button').on('click',function(){
+	$('.submit').on('click',function(){
          main.viewResult()
 	})
 
